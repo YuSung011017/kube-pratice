@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: spring-app
-          image: yusung1017/spring-server:1.0
+          image: yusung1017/spring-server:1.1
           imagePullPolicy: IfNotPresent  # ← 변경됨
           ports:
             - containerPort: 8080
