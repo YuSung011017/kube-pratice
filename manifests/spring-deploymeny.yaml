@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: spring-app
   namespace: default
-  labels:
-    app: spring-app
 spec:
   replicas: 2
   selector:
@@ -17,7 +15,8 @@ spec:
     spec:
       containers:
         - name: spring-app
-          image: yusung1017/spring-server:1.0  # 업데이트 시 태그 변경 필요
+          image: yusung1017/spring-server:1.0
+          imagePullPolicy: IfNotPresent  # ← 변경됨
           ports:
             - containerPort: 8080
           env:
